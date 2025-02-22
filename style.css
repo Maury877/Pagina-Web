@@ -1,0 +1,151 @@
+body{
+    overflow-x: hidden;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #ffffff;
+}
+header{
+    float: left;
+    width: 100%;
+    display: block;
+    background-color: hsl(199, 91%, 67%);
+    color: #ffffff;
+    padding: 0px 3%;
+    text-align: center;
+}
+h1{
+    font-size: 40px;
+}
+footer{
+    float: left;
+    width: 100%;
+    display: block;
+    background-color: hsl(199, 91%, 67%);
+    padding: 10px 3%;
+    text-align: center;
+    font-size: 14px;
+    position: fixed;
+    bottom: 0px;
+}
+
+#men{
+    float: left;
+    width: 15%;
+    display: inline-block;
+    background-color: hsl(212, 100%, 36%);
+    color: #ff01aa;
+    padding-bottom: 47px;
+    text-align: center;
+    box-sizing:border-box;
+}
+#men a {
+    display: block;
+    width: calc(100% - 2px); /* Ajusta el ancho para compensar los bordes */
+    padding: 5px;
+    color: #ffffff;
+    border-bottom: 1px solid #00aeff;
+    text-decoration: none;
+    box-sizing: border-box; /* Asegura que el padding y los bordes no excedan el ancho del enlace */
+}
+#men a:hover{
+    color: #00aeff;
+    border-bottom: 1px solid #0077ff;
+    font-weight: bold;
+}
+.con{
+    display: inline-block;
+    float: left;
+    width: 79%;
+    margin: 40px 3%;
+}
+#m1, #m2{
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px #ffffff solid;
+}
+
+#triqui {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    gap: 10px; /* Espacio entre casillas */
+    width: 320px;
+    margin: 0 auto;
+}
+.tb {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #fff;
+    border: 5px solid #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    box-shadow: 0px 0px 3px #000;
+}
+
+.tb:hover{
+    background-color: #f6f6f8;
+    border-color: #ddddde;
+}
+.btntri {
+    background-color: #4CAF50; /* Verde moderno */
+    color: white; /* Texto blanco */
+    padding: 10px 25px; /* Tamaño del botón */
+    font-size: 16px; /* Tamaño de fuente más legible */
+    font-weight: bold;
+    border: none; /* Sin borde predeterminado */
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: all 0.3s ease; /* Animación suave en hover */
+    display: inline-block; /* Evita que ocupe todo el ancho */
+    width: auto; /* Ajuste dinámico al contenido */
+    margin: 20px auto; /* Centrado del botón */
+}
+
+.btntri:hover {
+    background-color: #45a049; /* Color más oscuro en hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+    transform: scale(1.05); /* Ligeramente más grande al pasar el mouse */
+}
+
+#res {
+    position: absolute; /* Posición absoluta dentro del contenedor #triqui */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta para centrar completamente */
+    z-index: 10; /* Asegúrate de que esté encima del tablero */
+    font-size: 40px;
+    font-weight: bold;
+    color: #ffffff;
+    background: rgba(15, 6, 103, 0.8); /* Fondo semitransparente */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: none; /* Se muestra solo cuando sea necesario */
+}
+
+@media (max-width: 600px) {
+    #men{
+        width: 100%;
+        display: none;
+    }
+    #men a{
+        width: 100%;
+    }
+    #m1{
+        display: inherit;
+    }
+}
