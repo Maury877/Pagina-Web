@@ -102,7 +102,7 @@ footer{
 .btntri {
     background-color: #4CAF50; /* Verde moderno */
     color: white; /* Texto blanco */
-    padding: 10px 155px; /* Tamaño del botón */
+    padding: 10px 25px; /* Tamaño del botón */
     font-size: 16px; /* Tamaño de fuente más legible */
     font-weight: bold;
     border: none; /* Sin borde predeterminado */
