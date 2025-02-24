@@ -125,3 +125,62 @@ function pingan(im, li, ic) {
         pintar(i, tb.innerHTML, "#a6ff00");
     }
 }
+
+
+// ...existing code...
+
+function mostrarCalculos() {
+    const contenido = document.getElementById("triqui");
+    contenido.innerHTML = `
+        <h2>Mayor</h2>0
+        <form id="calcForm">
+            <label for="valor1">Ingrese el primer valor:</label>
+            <input type="number" id="valor1" name="valor1"><br><br>
+            <label for="valor2">Ingrese el segundo valor:</label>
+            <input type="number" id="valor2" name="valor2"><br><br>
+            <label for="signo">Ingrese un signo (+, -, *, /):</label>
+            <input type="text" id="signo" name="signo" maxlength="1"><br><br>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" name="resultado" readonly><br><br>
+            <button type="button" onclick="calcular()">Calcular</button>
+            <button type="button" onclick="limpiarCalculos()">Limpiar</button>
+        </form>
+    `;
+}
+
+function calcular() {
+    const valor1 = parseFloat(document.getElementById('valor1').value);
+    const valor2 = parseFloat(document.getElementById('valor2').value);
+    const signo = document.getElementById('signo').value;
+    let resultado = '';
+
+    switch (signo) {
+        case '+':
+            resultado = `${valor1} + ${valor2} = ${valor1 + valor2}`;
+            break;
+        case '-':
+            resultado = `${valor1} - ${valor2} = ${valor1 - valor2}`;
+            break;
+        case '*':
+            resultado = `${valor1} * ${valor2} = ${valor1 * valor2}`;
+            break;
+        case '/':
+            if (valor2 === 0) {
+                resultado = 'La división por cero es imposible :(';
+            } else {
+                resultado = `${valor1} / ${valor2} = ${valor1 / valor2}`;
+            }
+            break;
+        default:
+            resultado = 'Solo se permite suma, resta, multiplicación y división ;)';
+    }
+
+    document.getElementById('resultado').value = resultado;
+}
+
+function limpiarCalculos() {
+    document.getElementById('calcForm').reset();
+    document.getElementById('resultado').value = '';
+}
+
+// ...existing code...

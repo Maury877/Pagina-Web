@@ -57,6 +57,7 @@ function mostrarContenido(index) {
             break;
         case 1:
             contenido.innerHTML = "<h2>Cálculos Básicos</h2><p>Realiza tus cálculos aquí.</p>";
+            mostrarCalculos();
             break;
         case 2:
             contenido.innerHTML = "<h2>Mayor</h2><p>Encuentra el mayor número en esta sección.</p>";
