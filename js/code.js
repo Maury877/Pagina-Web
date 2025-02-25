@@ -1,3 +1,5 @@
+// EJERCICIO  TRIQUI   
+
 var player = 1;
 var finjue = 0;
 
@@ -125,9 +127,91 @@ function pingan(im, li, ic) {
         pintar(i, tb.innerHTML, "#a6ff00");
     }
 }
+// ...existing code...
 
+const titulos = [
+    "Operaciones básicas",
+    "¿Cuál es el número mayor?",
+    "Mayor, menor o igual que 100",
+    "Valores de forma ascendente",
+    "Notas",
+    "Área de un triángulo",
+    "Par o Impar",
+    "Descuento Rosas",
+    "Ganancias empleado",
+    "Concesionario de carros",
+    "Decremento de 3 en 3",
+    "Serie Fibonacci",
+    "Primeros 30 números primos",
+    "Suma, resta, promedio y diferencia números pares e impares",
+    "Operaciones número de 1 a 5",
+    "Divisible por 2 y 3 al mismo tiempo",
+    "Números primos en un rango de dos valores",
+    "Horas, minutos y segundos desde 00:00:00 hasta 23:00:00",
+    "Tabla de multiplicar",
+    "Cantidad de pares, impares y primos",
+    "Suma de dos números cualquiera",
+    "Promedio calificaciones",
+    "Área de un rectángulo",
+    "Área de una circunferencia",
+    "Terrenos, calcular el área",
+    "Cálculo del área de una figura compuesta por triángulos y semicircunferencia",
+    "Conversión de litros a galones para pagos de producción de leche",
+    "Distancia entre dos puntos en el plano cartesiano",
+    "Conversión de metros a pulgadas para pedidos de tela",
+    "Cálculo del Pago por Consumo de Agua",
+    "Determinación del Mayor de Dos Valores",
+    "Determinación de si un Número es Positivo o Negativo",
+    "Costo de Lápices",
+    "Almacenes “El harapiento distinguido”",
+    "La Mayor de Tres Cantidades",
+    "Cálculo del Presupuesto para Banquetes",
+    "Cálculo de Ganancia por la Venta de Uva",
+    "Costo de un Viaje Escolar",
+    "Costo de una Llamada Telefónica",
+    "Costo de un Viaje en Autobús",
+    "Consultas del Dr. Lorenzo T. Mata Lozano",
+    "Costos de Paquetería Internacional",
+    "Aumento de Límite de Crédito en Banco",
+    "Premios por Compras en Supermercado SM",
+    "Calculadora Básica con Menú",
+    "Operaciones Matemáticas con Número",
+    "Listado de Números Primos hasta N",
+    "Cálculo de Porcentaje de Género",
+    "Suma de Cinco Números",
+    "Números Pares entre 1 y N",
+    "Análisis de Ventas del Supermercado",
+    "Suma de Diez Cantidades con Ciclo Mientras",
+    "Cálculo de la Edad Promedio de Alumnos",
+    "Cálculo de la Estatura Promedio de Personas",
+    "Ahorro Mensual y Anual",
+    "Generación de la Sucesión de Fibonacci",
+    "Cálculo de Sueldo por Horas Trabajadas",
+    "Encuentro en la Carretera Aguascalientes-Zacatecas",
+    "Análisis de Ventas en la Tienda Tiki Taka",
+    "Cálculo de Nómina para Obreros en Constructora Tecnovivir Casas C.A.",
+    "Algoritmo para Caja Registradora",
+    "Suma de Diez Cantidades con Ciclo Repite",
+    "Contador de Cantidades Positivas y Negativas",
+    "Cálculo de la Suma de 10 Números",
+    "Clasificación y Suma de Números",
+    "Búsqueda de un Elemento en un Vector",
+    "Reordenamiento de un Vector de Enteros",
+    "Promedio de Números Enteros Positivos",
+    "Impresión de Notas Aprobadas en una Matriz 5x5",
+    "Ordenación y Análisis de una Matriz 5x5 de Números Enteros",
+    "Multiplicación de Matrices 3x3 y Suma de Filas y Columnas"
+];
+
+function mostrarTitulo(index) {
+    const contenido = document.getElementById("triqui");
+    contenido.innerHTML = `<h2>${titulos[index]}</h2>`;
+}
 
 // ...existing code...
+
+
+// EJERCICIO 1
 
 function mostrarCalculos() {
     const contenido = document.getElementById("triqui");
@@ -180,6 +264,176 @@ function calcular() {
 
 function limpiarCalculos() {
     document.getElementById('calcForm').reset();
+    document.getElementById('resultado').value = '';
+}
+
+// ...existing code...
+
+
+// EJERCICIO 2
+
+function mostrarMayor() {
+    const contenido = document.getElementById("triqui");
+    contenido.innerHTML = `
+        <h2>Mayor</h2>
+        <form id="mayorForm">
+            <label for="valor1">Ingrese el primer valor:</label>
+            <input type="number" id="valor1" name="valor1"><br><br>
+            <label for="valor2">Ingrese el segundo valor:</label>
+            <input type="number" id="valor2" name="valor2"><br><br>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" name="resultado" readonly><br><br>
+            <button type="button" onclick="calcularMayor()">Calcular</button>
+            <button type="button" onclick="limpiarMayor()">Limpiar</button>
+        </form>
+    `;
+}
+
+function calcularMayor() {
+    const valor1 = parseFloat(document.getElementById('valor1').value);
+    const valor2 = parseFloat(document.getElementById('valor2').value);
+    let resultado = '';
+
+    if (valor1 < valor2) {
+        resultado = `El número mayor es: ${valor2}`;
+    } else {
+        resultado = `El número mayor es: ${valor1}`;
+    }
+
+    document.getElementById('resultado').value = resultado;
+}
+
+function limpiarMayor() {
+    document.getElementById('mayorForm').reset();
+    document.getElementById('resultado').value = '';
+}
+
+// ...existing code...
+
+// EJERCICIO 3
+
+function mostrarComparacion() {
+    const contenido = document.getElementById("triqui");
+    contenido.innerHTML = `
+        <h2>Comparar con 100</h2>
+        <form id="comparacionForm">
+            <label for="valor">Ingrese un valor:</label>
+            <input type="number" id="valor" name="valor"><br><br>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" name="resultado" readonly><br><br>
+            <button type="button" onclick="compararCon100()">Calcular</button>
+            <button type="button" onclick="limpiarComparacion()">Limpiar</button>
+        </form>
+    `;
+}
+
+function compararCon100() {
+    const valor = parseFloat(document.getElementById('valor').value);
+    let resultado = '';
+
+    if (valor < 100) {
+        resultado = `${valor} es menor que 100`;
+    } else if (valor === 100) {
+        resultado = `${valor} es igual a 100`;
+    } else {
+        resultado = `${valor} es mayor que 100`;
+    }
+
+    document.getElementById('resultado').value = resultado;
+}
+
+function limpiarComparacion() {
+    document.getElementById('comparacionForm').reset();
+    document.getElementById('resultado').value = '';
+}
+
+// ...existing code...
+
+
+// EJERCICIO 4
+
+function mostrarOrdenar() {
+    const contenido = document.getElementById("triqui");
+    contenido.innerHTML = `
+        <h2>Ordenar Números</h2>
+        <form id="ordenarForm">
+            <label for="valor1">Ingrese el primer valor:</label>
+            <input type="number" id="valor1" name="valor1"><br><br>
+            <label for="valor2">Ingrese el segundo valor:</label>
+            <input type="number" id="valor2" name="valor2"><br><br>
+            <label for="valor3">Ingrese el tercer valor:</label>
+            <input type="number" id="valor3" name="valor3"><br><br>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" name="resultado" readonly><br><br>
+            <button type="button" onclick="ordenarNumeros()">Calcular</button>
+            <button type="button" onclick="limpiarOrdenar()">Limpiar</button>
+        </form>
+    `;
+}
+
+function ordenarNumeros() {
+    const valor1 = parseFloat(document.getElementById('valor1').value);
+    const valor2 = parseFloat(document.getElementById('valor2').value);
+    const valor3 = parseFloat(document.getElementById('valor3').value);
+    let resultado = '';
+
+    let numeros = [valor1, valor2, valor3];
+    numeros.sort((a, b) => a - b);
+    resultado = `${numeros[0]}, ${numeros[1]}, ${numeros[2]}`;
+
+    document.getElementById('resultado').value = resultado;
+}
+
+function limpiarOrdenar() {
+    document.getElementById('ordenarForm').reset();
+    document.getElementById('resultado').value = '';
+}
+
+// ...existing code...
+
+
+
+
+// ...existing code...
+
+function mostrarPromedio() {
+    const contenido = document.getElementById("triqui");
+    contenido.innerHTML = `
+        <h2>Calcular Promedio</h2>
+        <form id="promedioForm">
+            <label for="nota1">Ingrese la primera nota:</label>
+            <input type="number" id="nota1" name="nota1" step="0.01" min="0" max="5"><br><br>
+            <label for="nota2">Ingrese la segunda nota:</label>
+            <input type="number" id="nota2" name="nota2" step="0.01" min="0" max="5"><br><br>
+            <label for="nota3">Ingrese la tercera nota:</label>
+            <input type="number" id="nota3" name="nota3" step="0.01" min="0" max="5"><br><br>
+            <label for="resultado">Resultado:</label>
+            <input type="text" id="resultado" name="resultado" readonly><br><br>
+            <button type="button" onclick="calcularPromedio()">Calcular</button>
+            <button type="button" onclick="limpiarPromedio()">Limpiar</button>
+        </form>
+    `;
+}
+
+function calcularPromedio() {
+    const nota1 = parseFloat(document.getElementById('nota1').value);
+    const nota2 = parseFloat(document.getElementById('nota2').value);
+    const nota3 = parseFloat(document.getElementById('nota3').value);
+    let resultado = '';
+
+    if (nota1 > 5 || nota2 > 5 || nota3 > 5) {
+        resultado = 'Solo se permiten valores entre 0 y 5 ;)';
+    } else {
+        const promedio = (nota1 + nota2 + nota3) / 3;
+        resultado = `El promedio es: ${promedio.toFixed(2)}\n`;
+        resultado += promedio < 3 ? 'Reprueba :(' : 'Aprueba :)';
+    }
+
+    document.getElementById('resultado').value = resultado;
+}
+
+function limpiarPromedio() {
+    document.getElementById('promedioForm').reset();
     document.getElementById('resultado').value = '';
 }
 
